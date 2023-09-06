@@ -1,0 +1,26 @@
+.category-list {
+    margin: 20px;
+  }
+  
+  .category-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .category-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    min-width: 250px; /* Adjust the card width as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-card h3 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+  }
+  

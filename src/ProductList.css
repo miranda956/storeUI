@@ -1,0 +1,76 @@
+/* ProductList.css */
+
+/* Styles for the container */
+.product-list-container {
+  padding: 20px;
+}
+
+/* Style for the product list heading */
+.product-list-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style for the product card container */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute products evenly */
+}
+
+/* Style for each product card */
+.product-card {
+  flex-basis: calc(20% - 20px); /* 5 products per row with some margin */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
+  aspect-ratio: 1; /* Ensure the cards maintain a 1:1 aspect ratio */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Enlarge the card on hover */
+}
+
+/* Style for the product image */
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for the product details */
+.product-details {
+  padding: 10px;
+}
+
+/* Style for the product name */
+.product-name {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Style for the product description */
+.product-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Style for the product price */
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Clearfix to handle floating product cards */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
