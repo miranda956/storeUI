@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate  } from 'react-router-dom'; // Import useHistory
 import './ProductDetail.css'; // Import your custom CSS file for styling
 import { useCartDispatch } from './CartContext'; // Import the cart dispatch hook
 
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const dispatch = useCartDispatch(); // Access the cart dispatch function
+  const dispatch = useCartDispatch();
+  const navigate = useNavigate();
+
+  // Access the history object to navigate
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -25,11 +28,12 @@ function ProductDetail() {
     fetchProduct();
   }, [id]);
 
-  // Define a function to handle adding the product to the cart
   const addToCart = () => {
-    // Dispatch an action to add the product to the cart
     dispatch({ type: 'ADD_TO_CART', payload: product });
     console.log('Product added to cart:', product);
+
+    // Navigate to the CartPage after adding to cart
+          navigate('/cart');
   };
 
   if (!product) {
@@ -42,7 +46,6 @@ function ProductDetail() {
       <img src={product.image} alt={product.title} />
       <p className="product-description">{product.body}</p>
       <p className="product-price">Price: ${product.price}</p>
-      {/* Add a button to trigger the addToCart function */}
       <button className="add-to-cart-button" onClick={addToCart}>
         Add to Cart
       </button>
